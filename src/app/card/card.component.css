@@ -1,0 +1,199 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  font-family: sans-serif;
+
+  background: #0f172a;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.main-container{
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+  width: 100%;
+  max-width: 1400px;
+
+  min-height: 90vh;
+
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #1e293b
+  );
+
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 60px;
+
+  padding: 50px;
+
+  overflow: hidden;
+
+  flex-wrap: wrap;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* ================= IMAGE ================= */
+
+.slide-img{
+  width: 100%;
+  max-width: 420px;
+
+  border-radius: 25px;
+
+  object-fit: cover;
+
+  transition: 0.5s ease;
+
+  transform: translateX(-200%);
+  animation: imgSlide 1.2s ease forwards;
+}
+
+/* IMAGE HOVER */
+
+.slide-img:hover{
+  transform: scale(1.05);
+}
+
+/* ================= TEXT ================= */
+
+.slide-text{
+  color: white;
+
+  font-size: clamp(2.5rem,7vw,5.8rem);
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  word-break: break-word;
+
+  transform: translateX(200%);
+  animation: textSlide 1.2s ease forwards;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:992px){
+
+  .card{
+    gap: 40px;
+
+    padding: 40px 30px;
+  }
+
+  .slide-img{
+    max-width: 320px;
+  }
+
+  .slide-text{
+    text-align: center;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .main-container{
+    padding: 15px;
+  }
+
+  .card{
+    flex-direction: column;
+
+    min-height: auto;
+
+    text-align: center;
+
+    gap: 30px;
+
+    padding: 40px 20px;
+
+    border-radius: 22px;
+  }
+
+  .slide-img{
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .slide-text{
+    font-size: clamp(2rem,10vw,4rem);
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+  .card{
+    padding: 30px 15px;
+  }
+
+  .slide-img{
+    max-width: 220px;
+
+    border-radius: 18px;
+  }
+
+  .slide-text{
+    font-size: 2rem;
+
+    line-height: 1.2;
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes imgSlide{
+
+  from{
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textSlide{
+
+  from{
+    transform: translateX(200%);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

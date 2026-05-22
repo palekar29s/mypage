@@ -1,0 +1,390 @@
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* ================= HERO SECTION ================= */
+
+.card{
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 7%;
+
+  position: relative;
+  overflow: hidden;
+
+  gap: 30px;
+
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,0.20), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(37,99,235,0.22), transparent 30%),
+    linear-gradient(to right, #0f172a, #111827, #0b1430);
+}
+
+/* ================= BIG BACKGROUND GLOW ================= */
+
+.card::before{
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  background: radial-gradient(circle,
+      rgba(37,99,235,0.55) 0%,
+      rgba(59,130,246,0.28) 35%,
+      rgba(37,99,235,0.12) 55%,
+      transparent 75%);
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.9;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 0;
+
+  animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+/* EXTRA BLUE SHADE */
+
+.card::after{
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  background: #2563eb;
+
+  border-radius: 50%;
+
+  filter: blur(140px);
+
+  opacity: 0.22;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 0;
+}
+
+/* ================= LEFT TEXT ================= */
+
+.left-text{
+  color: white;
+
+  font-size: clamp(40px, 8vw, 120px);
+  font-weight: 900;
+
+  letter-spacing: 4px;
+
+  line-height: 1.1;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  transform: translateX(-250px);
+
+  animation: slideLeft 1.3s ease forwards;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.2),
+    0 0 35px rgba(59,130,246,0.45);
+
+  white-space: nowrap;
+}
+
+/* ================= RIGHT TEXT ================= */
+
+.right-text{
+  color: white;
+
+  font-size: clamp(40px, 8vw, 120px);
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  letter-spacing: 4px;
+
+  text-align: right;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  transform: translateX(250px);
+
+  animation: slideRight 1.3s ease forwards;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.2),
+    0 0 35px rgba(59,130,246,0.45);
+
+  white-space: nowrap;
+}
+
+/* ================= IMAGE WRAPPER ================= */
+
+.hero-img-wrapper{
+  width: min(380px, 90vw);
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  z-index: 2;
+
+  flex-shrink: 0;
+}
+
+/* ================= IMAGE BLUE GLOW ================= */
+
+.hero-img-wrapper::before{
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  background:
+    radial-gradient(circle,
+      rgba(59,130,246,0.75) 0%,
+      rgba(37,99,235,0.45) 35%,
+      rgba(59,130,246,0.18) 60%,
+      transparent 75%);
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  z-index: -1;
+
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+/* ================= HERO IMAGE ================= */
+
+.slide-img{
+  width: min(440px, 100%);
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+
+  opacity: 0;
+
+  transform: scale(0.4);
+
+  animation: popup 1.5s ease forwards;
+
+  filter:
+    drop-shadow(0 0 25px rgba(255,255,255,0.15))
+    drop-shadow(0 0 45px rgba(37,99,235,0.40));
+
+  transition: 0.45s ease;
+}
+
+/* ================= HOVER ================= */
+
+.slide-img:hover{
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes popup{
+
+  0%{
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  70%{
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft{
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight{
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow{
+
+  from{
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  to{
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse{
+
+  from{
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  to{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* ================= LAPTOP ================= */
+
+@media(max-width: 1200px){
+
+  .slide-img{
+    width: 360px;
+  }
+
+  .left-text,
+  .right-text{
+    font-size: clamp(35px, 7vw, 90px);
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width: 950px){
+
+  .card{
+    flex-direction: column;
+
+    justify-content: center;
+    text-align: center;
+
+    gap: 40px;
+
+    padding: 80px 20px;
+  }
+
+  .left-text,
+  .right-text{
+    font-size: clamp(38px, 12vw, 75px);
+
+    text-align: center;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-img-wrapper{
+    width: 280px;
+  }
+
+  .slide-img{
+    width: 100%;
+  }
+
+  .hero-img-wrapper::before{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 600px){
+
+  .card{
+    padding: 60px 15px;
+    gap: 25px;
+  }
+
+  .left-text,
+  .right-text{
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+
+  .hero-img-wrapper{
+    width: 220px;
+  }
+
+  .hero-img-wrapper::before{
+    width: 240px;
+    height: 240px;
+    filter: blur(70px);
+  }
+
+  .slide-img:hover{
+    transform: scale(1.02);
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 400px){
+
+  .left-text,
+  .right-text{
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-img-wrapper{
+    width: 180px;
+  }
+}

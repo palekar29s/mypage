@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #020817;
+}
+
+/* Prevent all sections from overflowing */
+section,
+div,
+main,
+app-root{
+  max-width: 100%;
+}
+
+/* Images responsive */
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent flex/grid overflow */
+.flex,
+.grid{
+  min-width: 0;
+}
