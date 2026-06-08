@@ -1,0 +1,264 @@
+/* ================= SECTION ================= */
+
+.connect-section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* ================= MAIN HEADING ================= */
+
+.main-heading{
+    color:#ffffff;
+
+    font-size:clamp(1.4rem,4vw,2.7rem);
+
+    max-width:1000px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+    animation:fadeUp 1s ease;
+}
+
+/* ================= LET'S CONNECT ================= */
+
+.connect-heading{
+    font-size:clamp(2.5rem,6vw,5rem);
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        90deg,
+        #38bdf8,
+        #8b5cf6,
+        #ec4899,
+        #38bdf8
+    );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite,
+        floating 4s ease-in-out infinite;
+}
+
+/* ================= INTRO ================= */
+
+.intro-text{
+    color:#f8fafc;
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    animation:fadeUp 1.4s ease;
+}
+
+/* ================= DESCRIPTION ================= */
+
+.description{
+    color:#cbd5e1;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    max-width:750px;
+
+    animation:fadeUp 1.8s ease;
+}
+
+.description a{
+    color:#38bdf8;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.description a::after{
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-4px;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.3s;
+}
+
+.description a:hover::after{
+    width:100%;
+}
+
+.description a:hover{
+    text-shadow:0 0 15px #38bdf8;
+}
+
+/* ================= ICONS ================= */
+
+.social-wrapper{
+    margin-top:50px;
+
+    display:flex;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+/* ================= ICON CARD ================= */
+
+.social{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.4s ease;
+
+    animation:iconFloat 4s ease-in-out infinite;
+}
+
+.social img{
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    padding:15px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.4s ease;
+}
+
+.social span{
+    font-size:1rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+}
+
+/* ================= GITHUB ================= */
+
+.github img:hover{
+    transform:translateY(-10px) scale(1.12);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.4),
+        0 0 50px rgba(255,255,255,.2);
+}
+
+/* ================= LINKEDIN ================= */
+
+.linkedin img:hover{
+    transform:translateY(-10px) scale(1.12);
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,.6),
+        0 0 50px rgba(56,189,248,.4);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes gradientMove{
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
+@keyframes floating{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes iconFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .social-wrapper{
+        gap:30px;
+    }
+
+    .social img{
+        width:75px;
+        height:75px;
+    }
+
+    .description{
+        font-size:1rem;
+    }
+}

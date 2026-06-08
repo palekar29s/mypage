@@ -1,10 +1,13 @@
 <div class="resume-container">
 
     <!-- SIDEBAR -->
+
     <div class="sidebar">
 
         <div class="glow glow1"></div>
         <div class="glow glow2"></div>
+
+        <!-- PROFILE -->
 
         <div class="profile-section">
 
@@ -27,24 +30,38 @@
             <h2>CONTACT</h2>
 
             <div class="contact-item">
-                📞 +91 9004998548
+                📞
+                <a href="tel:+919004998548">
+                    +91 9004998548
+                </a>
             </div>
 
             <div class="contact-item">
-                ✉️ palekarshruti14gmail.com
+                📧
+                <a href="mailto:palekarshruti&#64;gmail.com">
+                    palekarshruti1&#64;gmail.com
+                </a>
             </div>
 
             <div class="contact-item">
-                🔗 LinkedIn
+                💼
+                <a href="https://www.linkedin.com/"
+                   target="_blank">
+                   LinkedIn Profile
+                </a>
             </div>
 
             <div class="contact-item">
-                💻 GitHub
+                💻
+                <a href="https://github.com/palekar29s"
+                   target="_blank">
+                   GitHub Profile
+                </a>
             </div>
 
         </div>
 
-        <!-- SKILLS -->
+        <!-- TECH STACK -->
 
         <div class="sidebar-card">
 
@@ -81,28 +98,28 @@
 
             <p class="summary-text">
 
-                Passionate and detail-oriented
-                <span>Full Stack Developer</span>
-                with hands-on experience in
-                <span>Angular 19</span>,
-                <span>.NET Core</span>,
-                and
-                <span>MS SQL Server</span>.
+    Results-driven <span>Junior Full Stack Developer</span>
+    with hands-on experience building and maintaining
+    enterprise web applications during a 6-month internship
+    at <span>Swisstours India</span>.
 
-                Skilled in building scalable web applications,
-                RESTful APIs, responsive user interfaces,
-                and optimized database-driven systems.
+    Proficient in <span>Angular 19</span>,
+    <span>ASP.NET Core</span>, and
+    <span>MS SQL Server</span>, with practical experience
+    developing Web APIs, implementing business logic,
+    creating stored procedures, and delivering features
+    used in real-world production environments.
 
-                Experienced in real-world development workflows,
-                debugging enterprise applications,
-                implementing business logic,
-                and collaborating within agile environments.
+    Passionate about creating scalable, user-friendly
+    applications while continuously learning modern
+    technologies and development best practices.
 
-                Actively seeking an opportunity to contribute,
-                learn advanced technologies,
-                and grow as a professional software engineer.
+    Earned a <span>CGPA of 8.83</span> and currently
+    seeking full-time opportunities in
+    <span>Full Stack Development</span> to contribute,
+    learn, and grow within a dynamic software team.
 
-            </p>
+</p>
 
         </div>
 
@@ -142,27 +159,28 @@
 
                         <li>
                             Created and optimized MSSQL stored procedures
-                            for dynamic availability and booking operations.
+                            for booking and availability operations.
                         </li>
 
                         <li>
-                            Implemented complex date-range validation logic
-                            based on business requirements.
+                            Implemented complex business validation logic
+                            based on real-world requirements.
                         </li>
 
                         <li>
                             Integrated frontend and backend systems
-                            for smooth user experience.
+                            for seamless user experience.
                         </li>
 
                         <li>
-                            Worked with ADO.NET, SQL queries,
-                            debugging, and performance optimization.
+                            Worked with ADO.NET, debugging,
+                            SQL queries, and optimization.
                         </li>
 
                         <li>
-                            Participated in testing, deployment support,
-                            and real-world agile development processes.
+                            Participated in testing,
+                            deployment support,
+                            and agile workflows.
                         </li>
 
                     </ul>
@@ -188,6 +206,8 @@
 
             <div class="project-grid">
 
+                <!-- PROJECT 1 -->
+
                 <div class="project-card">
 
                     <div class="project-icon">
@@ -206,7 +226,23 @@
                         and responsive UI.
                     </p>
 
+                    <div class="project-links">
+
+                        <a href="https://github.com/palekar29s/rentcarbikefrontend"
+                           target="_blank">
+                           Frontend
+                        </a>
+
+                        <a href="https://github.com/palekar29s/rentcarbikebackend"
+                           target="_blank">
+                           Backend
+                        </a>
+
+                    </div>
+
                 </div>
+
+                <!-- PROJECT 2 -->
 
                 <div class="project-card">
 
@@ -221,11 +257,23 @@
                     <p>
                         Built a CRUD-based management system
                         with Angular and .NET Core API
-                        including search, filtering,
-                        and dashboard functionality.
+                        including filtering,
+                        dashboard functionality,
+                        and search operations.
                     </p>
 
+                    <div class="project-links">
+
+                        <a href="https://github.com/palekar29s/LOst-found"
+                           target="_blank">
+                           GitHub
+                        </a>
+
+                    </div>
+
                 </div>
+
+                <!-- PROJECT 3 -->
 
                 <div class="project-card">
 
@@ -241,8 +289,23 @@
                         Created a responsive property portal
                         using Angular 19 and .NET Core
                         with OpenStreetMap integration,
-                        authentication, and admin dashboard.
+                        authentication,
+                        and admin dashboard.
                     </p>
+
+                    <div class="project-links">
+
+                         <a href="https://github.com/palekar29s/realestate"
+                           target="_blank">
+                           Frontend
+                        </a>
+
+                        <a href="https://github.com/palekar29s/realestatebackend"
+                           target="_blank">
+                           Backend
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -273,31 +336,37 @@
 
         </div>
 
-        <!-- CERTIFICATION -->
+        <!-- CERTIFICATIONS -->
 
         <div class="premium-card">
 
             <h2>CERTIFICATIONS</h2>
 
-            <div class="certificate-grid">
+           <div class="certificate-grid">
 
-                <div class="certificate-card">
-                    Angular Fundamentals
-                </div>
+    <div class="certificate-card"
+         (click)="openCertificate('assets/Angular.jpg')">
+        Angular Fundamentals
+    </div>
 
-                <div class="certificate-card">
-                    ASP.NET Core Foundations
-                </div>
+    <div class="certificate-card"
+         (click)="openCertificate('assets/Asp.net.jpg')">
+        ASP.NET Core Foundations
+    </div>
 
-                <div class="certificate-card">
-                    Docker Foundation
-                </div>
+    <div class="certificate-card"
+         (click)="openCertificate('assets/Docker.jpg')">
+        Docker Foundation
+    </div>
 
-                <div class="certificate-card">
-                    CCC - NIELIT
-                </div>
+   <div class="certificate-card"> CCC - NIELIT </div>
 
-            </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="selectedCertificate" (click)="closeCertificate()">
+    <img [src]="selectedCertificate" alt="Certificate">
+</div>
 
         </div>
 

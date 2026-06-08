@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -25,7 +25,7 @@ body{
 
     background:
     radial-gradient(circle at top left,#2563eb22,transparent 25%),
-    radial-gradient(circle at bottom right,#7c3aed22,transparent 25%),
+    radial-gradient(circle at bottom right,#9333ea22,transparent 25%),
     #070b14;
 
     color:white;
@@ -50,7 +50,7 @@ body{
     overflow:hidden;
 }
 
-/* ================= GLOW EFFECTS ================= */
+/* ================= GLOW EFFECT ================= */
 
 .glow{
     position:absolute;
@@ -120,11 +120,9 @@ body{
 .profile-section h1{
     margin-top:25px;
 
-    font-size:clamp(28px,4vw,32px);
+    font-size:32px;
 
     font-weight:700;
-
-    word-break:break-word;
 }
 
 .role{
@@ -132,9 +130,7 @@ body{
 
     color:#93c5fd;
 
-    font-size:clamp(14px,2vw,16px);
-
-    line-height:1.6;
+    font-size:15px;
 }
 
 /* ================= SIDEBAR CARD ================= */
@@ -160,7 +156,7 @@ body{
 
     color:#60a5fa;
 
-    font-size:clamp(22px,3vw,28px);
+    font-size:24px;
 }
 
 /* ================= CONTACT ================= */
@@ -176,15 +172,29 @@ body{
 
     transition:0.4s;
 
-    cursor:pointer;
+    display:flex;
 
-    word-break:break-word;
+    align-items:center;
+
+    gap:12px;
 }
 
 .contact-item:hover{
     transform:translateX(8px);
 
     background:linear-gradient(135deg,#2563eb44,#9333ea44);
+}
+
+.contact-item a{
+    text-decoration:none;
+
+    color:#dbeafe;
+
+    transition:0.3s;
+}
+
+.contact-item a:hover{
+    color:#60a5fa;
 }
 
 /* ================= SKILLS ================= */
@@ -221,8 +231,6 @@ body{
     flex:1;
 
     padding:40px;
-
-    width:100%;
 }
 
 /* ================= PREMIUM CARD ================= */
@@ -246,7 +254,7 @@ body{
 
     overflow:hidden;
 
-    animation:fadeUp 1s ease;
+    box-shadow:0 0 20px rgba(37,99,235,0.05);
 }
 
 .premium-card::before{
@@ -276,9 +284,7 @@ body{
 
     margin-bottom:25px;
 
-    font-size:clamp(24px,4vw,30px);
-
-    line-height:1.3;
+    font-size:28px;
 }
 
 /* ================= SUMMARY ================= */
@@ -287,8 +293,6 @@ body{
     line-height:2;
 
     color:#dbeafe;
-
-    font-size:clamp(14px,2vw,16px);
 }
 
 .summary-text span{
@@ -311,16 +315,12 @@ body{
     border-radius:10px;
 
     background:linear-gradient(#2563eb,#9333ea);
-
-    flex-shrink:0;
 }
 
 .experience-content h3{
-    font-size:clamp(22px,4vw,26px);
+    font-size:24px;
 
     margin-bottom:10px;
-
-    line-height:1.4;
 }
 
 .experience-content span{
@@ -341,8 +341,6 @@ body{
     color:#dbeafe;
 
     line-height:1.8;
-
-    font-size:clamp(14px,2vw,16px);
 }
 
 .tech-used{
@@ -356,10 +354,10 @@ body{
 
     color:#93c5fd;
 
-    line-height:1.7;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-/* ================= PROJECTS ================= */
+/* ================= PROJECT ================= */
 
 .project-grid{
     display:grid;
@@ -381,6 +379,10 @@ body{
     position:relative;
 
     overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(15px);
 }
 
 .project-card::before{
@@ -403,6 +405,12 @@ body{
     transform:translateY(-10px) scale(1.03);
 
     background:rgba(255,255,255,0.08);
+
+    border-color:#60a5fa55;
+
+    box-shadow:
+    0 0 30px #2563eb33,
+    0 0 60px #9333ea22;
 }
 
 .project-icon{
@@ -416,15 +424,53 @@ body{
 
     color:#93c5fd;
 
-    font-size:clamp(20px,3vw,24px);
+    font-size:22px;
 }
 
 .project-card p{
     color:#dbeafe;
 
     line-height:1.8;
+}
 
-    font-size:clamp(14px,2vw,15px);
+/* ================= PROJECT LINKS ================= */
+
+.project-links{
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+}
+
+.project-links a{
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.07);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#dbeafe;
+
+    font-size:14px;
+
+    transition:0.4s;
+}
+
+.project-links a:hover{
+    transform:translateY(-5px);
+
+    background:linear-gradient(135deg,#2563eb,#9333ea);
+
+    color:white;
+
+    box-shadow:0 0 20px #2563eb66;
 }
 
 /* ================= EDUCATION ================= */
@@ -439,21 +485,25 @@ body{
     margin-bottom:20px;
 
     transition:0.4s;
+
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 .education-card:hover{
     transform:translateX(10px);
+
+    border-color:#60a5fa44;
+
+    background:rgba(255,255,255,0.07);
 }
 
 .education-card h3{
     color:#93c5fd;
 
     margin-bottom:10px;
-
-    line-height:1.5;
 }
 
-/* ================= CERTIFICATION ================= */
+/* ================= CERTIFICATE ================= */
 
 .certificate-grid{
     display:flex;
@@ -474,30 +524,16 @@ body{
 
     cursor:pointer;
 
-    line-height:1.6;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
 .certificate-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-8px) scale(1.03);
 
     box-shadow:0 0 25px #2563eb88;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
+/* ================= ANIMATION ================= */
 
 @keyframes float{
 
@@ -515,22 +551,47 @@ body{
 
 }
 
-/* ================= LAPTOP ================= */
+/* ================= SCROLLBAR ================= */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
 
-@media(max-width:1200px){
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-    .sidebar{
-        width:300px;
-        min-width:300px;
-    }
-
-    .main-content{
-        padding:30px;
-    }
-
+  z-index:1000;
 }
 
-/* ================= TABLET ================= */
+.modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+.certificate-card{
+  cursor:pointer;
+}
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#070b14;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#2563eb,#9333ea);
+
+    border-radius:20px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:1000px){
 
@@ -541,87 +602,41 @@ body{
     .sidebar{
         width:100%;
         min-width:100%;
-
-        border-right:none;
-
-        border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .main-content{
-        padding:25px;
-    }
-
-    .experience-box{
-        gap:18px;
     }
 
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:768px){
+
+    .main-content{
+        padding:20px;
+    }
 
     .sidebar{
         padding:30px 20px;
-    }
-
-    .profile-circle{
-        width:110px;
-        height:110px;
-
-        font-size:36px;
-    }
-
-    .sidebar-card{
-        padding:20px;
-        border-radius:20px;
-    }
-
-    .premium-card{
-        padding:25px;
-        border-radius:25px;
     }
 
     .project-grid{
         grid-template-columns:1fr;
     }
 
-    .project-card{
+    .premium-card{
         padding:25px;
-    }
-
-    .certificate-grid{
-        flex-direction:column;
-    }
-
-    .certificate-card{
-        width:100%;
-        text-align:center;
     }
 
 }
 
-/* ================= SMALL MOBILE ================= */
-
 @media(max-width:480px){
 
-    .main-content{
-        padding:15px;
-    }
-
-    .sidebar{
-        padding:25px 15px;
-    }
-
     .profile-circle{
-        width:95px;
-        height:95px;
+        width:100px;
+        height:100px;
 
-        font-size:30px;
+        font-size:32px;
     }
 
     .profile-section h1{
-        font-size:24px;
+        font-size:26px;
     }
 
     .premium-card{
@@ -635,47 +650,6 @@ body{
     .line{
         width:100%;
         height:5px;
-    }
-
-    .project-card{
-        padding:20px;
-    }
-
-    .education-card{
-        padding:20px;
-    }
-
-    .contact-item:hover,
-    .education-card:hover,
-    .project-card:hover,
-    .premium-card:hover{
-        transform:none;
-    }
-
-    .skill-pill{
-        font-size:12px;
-        padding:8px 14px;
-    }
-
-}
-
-/* ================= EXTRA SMALL ================= */
-
-@media(max-width:360px){
-
-    .premium-card h2{
-        font-size:22px;
-    }
-
-    .project-card h3,
-    .experience-content h3{
-        font-size:20px;
-    }
-
-    .summary-text,
-    .project-card p,
-    .experience-content li{
-        font-size:13px;
     }
 
 }
