@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeComponent } from './home/home.component';
+import { MylifeComponent } from './mylife/mylife.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,12 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+
+  //MY LIFE
+  {
+    path: 'mylife',
+    component: MylifeComponent
   },
 
   // RESUME PAGE
