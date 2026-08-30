@@ -3,6 +3,8 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { IntroComponent } from './intro/intro.component';
 import { MaincontentComponent } from './maincontent/maincontent.component';
+import { inject } from '@vercel/analytics';
+
 
 @Component({
   selector: 'app-root',
@@ -13,4 +15,8 @@ import { MaincontentComponent } from './maincontent/maincontent.component';
 export class AppComponent {
   title = 'mypage';
 
+
+ constructor() {
+    inject();
+  }
 }
