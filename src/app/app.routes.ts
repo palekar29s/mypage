@@ -2,16 +2,21 @@ import { Routes } from '@angular/router';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeComponent } from './home/home.component';
 import { MylifeComponent } from './mylife/mylife.component';
+import { NewwwwComponent } from './newwww/newwww.component';
 
 export const routes: Routes = [
 
  
- {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-
+ //{
+  //  path: '',
+  //  redirectTo: 'home',
+   // pathMatch: 'full'
+ // },
+{
+  path: '',
+  redirectTo: 'neww',
+  pathMatch: 'full'
+},
   // HOME PAGE
   {
     path: 'home',
@@ -28,6 +33,11 @@ export const routes: Routes = [
   {
     path: 'resume',
     component: ResumeComponent
+  },
+
+  {
+    path: 'neww',
+    component: NewwwwComponent
   }
 
 ];

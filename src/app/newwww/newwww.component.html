@@ -1,0 +1,457 @@
+<!-- ========================================= -->
+<!-- PASSWORD SCREEN -->
+<!-- ========================================= -->
+
+<div
+  class="password-page"
+  *ngIf="!isUnlocked"
+>
+
+  <div class="password-card">
+
+    <div class="lock-icon">
+      🔐
+    </div>
+
+    <h1>
+     Surprise ❤️
+    </h1>
+
+    <p>
+      This little surprise is only for Devi 👀
+    </p>
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Enter password"
+      autocomplete="off"
+      (keyup.enter)="unlockPage()"
+    >
+
+    <button
+      class="cute-button"
+      (click)="unlockPage()"
+    >
+       Unlock It, Birthday Girl 😏🎂❤️
+    </button>
+
+    <p
+      *ngIf="passwordError"
+      class="password-error"
+    >
+      Wrong password 👀 Try again.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- ACTUAL BIRTHDAY PAGE -->
+<!-- ========================================= -->
+
+<div
+  class="birthday-page"
+  *ngIf="isUnlocked"
+>
+
+
+  <!-- Floating Decorations -->
+
+  <div class="floating-heart heart-1">
+    ❤️
+  </div>
+
+  <div class="floating-heart heart-2">
+    💗
+  </div>
+
+  <div class="floating-heart heart-3">
+    ✨
+  </div>
+
+  <div class="floating-heart heart-4">
+    🌸
+  </div>
+
+
+
+  <!-- ========================================= -->
+  <!-- SECTION 1 - BIRTHDAY MESSAGE -->
+  <!-- ========================================= -->
+
+  <section class="birthday-card">
+
+    <div class="cake">
+      🎂
+    </div>
+
+    <h1>
+      Happy Birthday, Devi
+      <span class="heart">
+        ❤️
+      </span>
+    </h1>
+
+    <h2>
+      ✨
+    </h2>
+
+    <div class="divider">
+      <span>
+        ♡
+      </span>
+    </div>
+
+    <div class="birthday-text">
+
+      <p class="main-wish">
+        <strong>
+          Have a good one, Devi. ❤️
+        </strong>
+      </p>
+
+      <p>
+        May you always have
+        <strong>
+          peace in your heart, happiness around you,
+          and a reason to smile.
+        </strong>
+      </p>
+
+      <p>
+        May this year bring you a little closer
+        to everything you've been hoping for. ✨
+      </p>
+
+      <p class="glowing-line">
+        Keep smiling, keep shining,
+        <br>
+        and keep glowing. ✨
+      </p>
+
+    </div>
+
+
+    <!-- First Button -->
+
+    <button
+      class="cute-button"
+      (click)="openSunflower()"
+    >
+      There's something for you 👀 →
+    </button>
+
+    <p class="button-hint">
+      There's something else for you 👀
+    </p>
+
+  </section>
+
+
+
+  <!-- ========================================= -->
+  <!-- SECTION 2 - SUNFLOWER -->
+  <!-- ========================================= -->
+
+  <section
+    id="sunflower-section"
+    class="reveal-section sunflower-section"
+    *ngIf="showSunflower"
+  >
+
+    <div class="section-icon">
+      🌻
+    </div>
+
+    <h2>
+      Okay... one more thing 👀
+    </h2>
+
+    <p class="sunflower-message">
+
+      I can't meet you on your birthday...
+
+      <br>
+
+      Because birthdays are special,
+      and you should spend them with
+      the people you love. ❤️
+
+    </p>
+
+    <p class="little-line">
+      But you don't love me na? 😂
+    </p>
+
+    <p class="sunflower-message">
+
+      So... at least I can send you
+      something you actually like. 🌻
+
+    </p>
+
+
+    <!-- Sunflower Bouquet -->
+
+    <div class="sticker-container sunflower-sticker">
+
+      <img
+        src="assets/sunflower.webp"
+        alt="Sunflower Bouquet"
+      >
+
+    </div>
+
+    <p class="sticker-caption">
+      A little sunflower bouquet for you 🌻
+    </p>
+
+
+    <!-- Second Button -->
+
+    <button
+      class="cute-button"
+      (click)="openChhava()"
+    >
+      Wait... there's one more thing 🌻 →
+    </button>
+
+    <p class="button-hint">
+      I think something is still missing... 👀
+    </p>
+
+  </section>
+
+
+
+  <!-- ========================================= -->
+  <!-- SECTION 3 - CHHAVA -->
+  <!-- ========================================= -->
+
+  <section
+    id="chhava-section"
+    class="reveal-section chhava-section"
+    *ngIf="showChhava"
+  >
+
+    <div class="section-icon">
+      🎬
+    </div>
+
+    <h2>
+      I think something is still missing... 👀
+    </h2>
+
+    <p class="chhava-intro">
+      You should definitely click again. 😂
+    </p>
+
+    <p class="chhava-message">
+
+      I think you love this...
+
+      <br>
+
+      So how can I miss it, right? 👀
+
+    </p>
+
+
+    <!-- Chafa Button -->
+
+    <button
+      *ngIf="!showChafaContent"
+      class="cute-button"
+      (click)="openChafaContent()"
+    >
+      Okay, click here 👀 →
+    </button>
+
+
+    <!-- Chafa Content -->
+
+    <div
+      *ngIf="showChafaContent"
+      class="chafa-reveal"
+    >
+
+      <h3 class="chafa-title">
+        Chafa ❤️
+      </h3>
+
+
+      <!-- Chafa Image -->
+
+      <div class="sticker-container chhava-sticker">
+
+        <img
+          src="assets/chafa.webp"
+          alt="Chafa"
+        >
+
+      </div>
+
+
+      <!-- White Rose -->
+
+      <div class="rose-sticker">
+
+        <img
+          src="assets/whiterose.webp"
+          alt="White Rose"
+        >
+
+      </div>
+
+
+      <p class="peace-text">
+        This one is for peace. 🤍
+      </p>
+
+
+      <!-- Final Button -->
+
+      <button
+        class="cute-button final-button"
+        (click)="openFinal()"
+      >
+        Okay, last one... probably 😂 →
+      </button>
+
+      <p class="button-hint">
+        Final message... read it till the end 👀
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================= -->
+  <!-- SECTION 4 - FINAL MESSAGE -->
+  <!-- ========================================= -->
+
+  <section
+    id="final-section"
+    class="final-section"
+    *ngIf="showFinal"
+  >
+
+    <div class="final-sparkle">
+      ✨❤️
+    </div>
+
+    <div class="final-content">
+
+
+      <!-- Her Photo -->
+
+      <div class="photo-frame">
+
+        <img
+          src="assets/devi.webp"
+          alt="Devi"
+        >
+
+      </div>
+
+
+      <!-- Final Message -->
+
+      <div class="final-message">
+
+        <h1>
+          Happy Birthday, Devi ❤️
+        </h1>
+
+        <p class="rajkumar-line">
+
+          May you find your dream ka
+          <strong>
+            Rajkumar
+          </strong>
+
+          👀😂
+
+        </p>
+
+        <p>
+
+          And yes...
+
+          <br>
+
+          have a really good one! 🎂✨
+
+        </p>
+
+        <p class="final-wish">
+
+          May you always have peace in your heart,
+          happiness around you,
+          and a reason to smile.
+
+        </p>
+
+        <p>
+
+          May this year bring you a little closer
+          to everything you've been hoping for. ✨
+
+        </p>
+
+        <h2 class="keep-glowing">
+          Keep Glowing ✨
+        </h2>
+
+
+        <div class="final-divider">
+          <span>
+            ♡
+          </span>
+        </div>
+
+
+        <p class="chintya-message">
+
+          Baaki tension nahi lene ka... 😂
+
+          <br>
+
+          <strong>
+
+            Chintya is there for you —
+            dua maangne ke liye. 🙏❤️
+
+          </strong>
+
+        </p>
+
+
+        <div class="final-ending">
+
+          <span>
+            ✨
+          </span>
+
+          <p>
+            Have a beautiful birthday, Devi. ❤️
+          </p>
+
+          <span>
+            ✨
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

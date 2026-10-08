@@ -1,0 +1,1864 @@
+/* =========================================
+   PASSWORD PAGE
+========================================= */
+
+.password-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 182, 193, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(205, 180, 255, 0.35),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fff5fa,
+      #fffdf8,
+      #f8f2ff
+    );
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   PASSWORD CARD
+========================================= */
+
+.password-card {
+  width: min(450px, 92%);
+
+  padding: 55px 40px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 180, 210, 0.45);
+
+  box-shadow:
+    0 25px 70px rgba(150, 90, 140, 0.18);
+
+  backdrop-filter: blur(12px);
+
+  animation: passwordCardReveal 0.8s ease forwards;
+}
+
+
+@keyframes passwordCardReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================
+   LOCK ICON
+========================================= */
+
+.lock-icon {
+  font-size: 65px;
+
+  margin-bottom: 20px;
+
+  animation: lockFloat 2.5s ease-in-out infinite;
+}
+
+
+@keyframes lockFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* =========================================
+   PASSWORD TITLE
+========================================= */
+
+.password-card h1 {
+
+  margin: 0 0 15px;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ec3d89,
+      #bd49dc
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+}
+
+
+/* =========================================
+   PASSWORD DESCRIPTION
+========================================= */
+
+.password-card > p {
+
+  margin: 0 0 25px;
+
+  color: #80677e;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PASSWORD INPUT
+========================================= */
+
+.password-card input {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 18px;
+
+  border-radius: 15px;
+
+  border: 2px solid #f0c4df;
+
+  background: white;
+
+  outline: none;
+
+  text-align: center;
+
+  font-size: 16px;
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #66566b;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.password-card input:focus {
+
+  border-color: #d946a6;
+
+  box-shadow:
+    0 0 0 4px rgba(217, 70, 166, 0.10);
+
+}
+
+
+.password-card input::placeholder {
+
+  color: #b7a3b3;
+
+}
+
+
+/* =========================================
+   PASSWORD BUTTON
+========================================= */
+
+.password-card .cute-button {
+
+  margin-top: 20px;
+
+  border: none;
+
+  padding: 15px 35px;
+
+  border-radius: 50px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  color: white;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ff668c,
+      #bd4be4
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(190, 70, 170, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.password-card .cute-button:hover {
+
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 15px 30px
+    rgba(190, 70, 170, 0.35);
+
+}
+
+
+/* =========================================
+   PASSWORD ERROR
+========================================= */
+
+.password-error {
+
+  margin-top: 20px !important;
+
+  margin-bottom: 0 !important;
+
+  color: #e53935 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 600;
+
+  animation: errorShake 0.35s ease;
+
+}
+
+
+@keyframes errorShake {
+
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  75% {
+    transform: translateX(6px);
+  }
+
+}
+
+
+/* =========================================
+   1. BASE & MAIN PAGE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+.birthday-page {
+
+  min-height: 100vh;
+
+  padding: 60px 20px 100px;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 182, 193, 0.25),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(205, 180, 255, 0.25),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #fff8fc,
+      #fffdf8,
+      #fdf8ff
+    );
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #66566b;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   2. FLOATING DECORATIONS
+========================================= */
+
+.floating-heart {
+
+  position: fixed;
+
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  z-index: 0;
+
+  animation:
+    floating 5s ease-in-out infinite;
+}
+
+
+.heart-1 {
+
+  left: 7%;
+  top: 20%;
+
+  font-size: 22px;
+}
+
+
+.heart-2 {
+
+  right: 8%;
+  top: 30%;
+
+  font-size: 26px;
+
+  animation-delay: 1s;
+}
+
+
+.heart-3 {
+
+  left: 12%;
+  bottom: 20%;
+
+  font-size: 22px;
+
+  animation-delay: 2s;
+}
+
+
+.heart-4 {
+
+  right: 12%;
+  bottom: 15%;
+
+  font-size: 24px;
+
+  animation-delay: 3s;
+}
+
+
+@keyframes floating {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+}
+
+
+/* =========================================
+   3. SHARED CARD CONTAINERS
+========================================= */
+
+.birthday-card,
+.reveal-section,
+.final-section {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: min(850px, 95%);
+
+  margin: 0 auto 70px;
+
+  padding: 65px 55px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  border:
+    1px solid
+    rgba(255, 180, 210, 0.35);
+
+  box-shadow:
+    0 20px 60px
+    rgba(150, 90, 140, 0.12);
+
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   4. MAIN CARD — CAKE
+========================================= */
+
+.cake {
+
+  font-size: 90px;
+
+  margin-bottom: 15px;
+
+  animation:
+    cakeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes cakeFloat {
+
+  0%, 100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(2deg);
+  }
+
+}
+
+
+/* =========================================
+   5. MAIN CARD — HEADINGS
+========================================= */
+
+.birthday-card h1 {
+
+  margin: 0;
+
+  font-size:
+    clamp(40px, 7vw, 62px);
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ec3d89,
+      #bd49dc
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  letter-spacing: -1px;
+}
+
+
+.birthday-card h1 .heart {
+
+  color: #ff3b70;
+
+  background: none;
+
+  -webkit-background-clip: initial;
+
+  background-clip: initial;
+
+  font-size: 0.8em;
+}
+
+
+.birthday-card h2 {
+
+  margin-top: 8px;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  color: #80677e;
+}
+
+
+.divider {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin: 35px 0;
+}
+
+
+.divider::before,
+.divider::after {
+
+  content: "";
+
+  width: 80px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ed5b9d,
+      transparent
+    );
+}
+
+
+.divider span {
+
+  color: #ec4c94;
+
+  font-size: 25px;
+}
+
+
+/* =========================================
+   6. BIRTHDAY TEXT
+========================================= */
+
+.birthday-text {
+
+  max-width: 680px;
+
+  margin: auto;
+
+  font-size: 19px;
+
+  line-height: 1.9;
+}
+
+
+.birthday-text p {
+
+  margin: 24px 0;
+}
+
+
+.main-wish {
+
+  font-size: 23px;
+
+  color: #744b6f;
+}
+
+
+.glowing-line {
+
+  margin-top: 35px !important;
+
+  font-size: 21px;
+
+  color: #b53b91;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   7. BUTTONS
+========================================= */
+
+.cute-button {
+
+  border: none;
+
+  margin-top: 35px;
+
+  padding: 15px 32px;
+
+  border-radius: 50px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  color: white;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ff668c,
+      #bd4be4
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(190, 70, 170, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.cute-button:hover {
+
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 15px 30px
+    rgba(190, 70, 170, 0.35);
+}
+
+
+.cute-button:active {
+
+  transform: scale(0.96);
+}
+
+
+.cute-button span {
+
+  margin-left: 8px;
+
+  font-size: 20px;
+}
+
+
+.button-hint {
+
+  margin-top: 14px;
+
+  font-size: 14px;
+
+  color: #a78aa3;
+
+  font-style: italic;
+}
+
+
+.final-button {
+
+  margin-top: 40px;
+}
+
+
+/* =========================================
+   8. REVEAL SECTIONS
+========================================= */
+
+.reveal-section {
+
+  animation:
+    revealSection 1s ease forwards;
+}
+
+
+@keyframes revealSection {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(50px)
+      scale(0.97);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+.section-icon {
+
+  font-size: 65px;
+
+  margin-bottom: 15px;
+
+  animation:
+    softBounce 2.5s ease-in-out infinite;
+}
+
+
+@keyframes softBounce {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+.reveal-section h2 {
+
+  margin: 0 0 25px;
+
+  font-size:
+    clamp(28px, 5vw, 42px);
+
+  color: #b83f9d;
+}
+
+
+/* =========================================
+   9. SUNFLOWER SECTION
+========================================= */
+
+.sunflower-section {
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf7,
+      #fff8ed
+    );
+}
+
+
+.sunflower-message {
+
+  max-width: 620px;
+
+  margin: 20px auto;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+.little-line {
+
+  margin: 30px 0;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #c14c87;
+}
+
+
+.sticker-container {
+
+  margin:
+    35px auto 15px;
+
+  width:
+    min(430px, 90%);
+
+  padding: 12px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(130, 90, 60, 0.15);
+
+  transform: rotate(-2deg);
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.sticker-container:hover {
+
+  transform:
+    rotate(0deg)
+    scale(1.03);
+}
+
+
+.sticker-container img {
+
+  width: 100%;
+
+  display: block;
+
+  border-radius: 14px;
+}
+
+
+.sticker-caption {
+
+  font-size: 18px;
+
+  color: #9b657f;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   10. CHHAVA SECTION
+========================================= */
+
+.chhava-section {
+
+  background:
+    linear-gradient(
+      145deg,
+      #fcfaff,
+      #f8f5ff
+    );
+}
+
+
+.chhava-intro {
+
+  font-size: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+.chhava-message {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: #725879;
+}
+
+
+.chhava-section h3 {
+
+  margin-top: 30px;
+
+  margin-bottom: 10px;
+
+  font-size: 38px;
+
+  color: #7748a5;
+}
+
+
+.chhava-sticker {
+
+  width:
+    min(320px, 80%);
+
+  transform: rotate(2deg);
+}
+
+
+.chhava-sticker:hover {
+
+  transform:
+    rotate(0deg)
+    scale(1.03);
+}
+
+
+/* =========================================
+   11. WHITE ROSE
+========================================= */
+
+.rose-sticker {
+
+  margin:
+    30px auto 10px;
+
+  width: 90px;
+
+  animation:
+    roseFloat 3s ease-in-out infinite;
+}
+
+
+.rose-sticker img {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+@keyframes roseFloat {
+
+  0%, 100% {
+
+    transform:
+      translateY(0)
+      rotate(-2deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-8px)
+      rotate(2deg);
+
+  }
+
+}
+
+
+.peace-text {
+
+  margin-top: 5px;
+
+  font-size: 18px;
+
+  color: #66725c;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   12. CHHAVA GOLDEN / GREEN THEME
+========================================= */
+
+.chhava-section {
+
+  background:
+
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(184, 139, 72, 0.16),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(112, 139, 92, 0.18),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      145deg,
+      #f8f4df,
+      #eef3df,
+      #f7f1df
+    );
+
+  border:
+    1px solid
+    rgba(132, 111, 63, 0.22);
+
+  box-shadow:
+    0 20px 60px
+    rgba(92, 91, 55, 0.16);
+}
+
+
+.chhava-section h2 {
+
+  color: #7d5b28;
+
+  text-shadow:
+    0 1px 1px
+    rgba(255, 255, 255, 0.7);
+}
+
+
+.chhava-section h3 {
+
+  margin-top: 30px;
+
+  margin-bottom: 15px;
+
+  font-size: 40px;
+
+  color: #9a6525;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-shadow:
+
+    1px 1px 0 #f5e7bd,
+
+    0 3px 8px
+    rgba(91, 66, 30, 0.15);
+}
+
+
+.chhava-intro {
+
+  font-size: 18px;
+
+  color: #59684d;
+
+  margin-bottom: 25px;
+}
+
+
+.chhava-message {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: #59634c;
+}
+
+
+.chhava-sticker {
+
+  width:
+    min(320px, 80%);
+
+  padding: 10px;
+
+  background: #f8f0d8;
+
+  border:
+    2px solid
+    rgba(156, 119, 55, 0.3);
+
+  box-shadow:
+    0 15px 35px
+    rgba(83, 76, 48, 0.20);
+
+  transform: rotate(2deg);
+
+  animation:
+    chhavaReveal 1s ease forwards;
+}
+
+
+.chhava-sticker:hover {
+
+  transform:
+    rotate(0deg)
+    scale(1.04);
+}
+
+
+@keyframes chhavaReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.88)
+      rotate(6deg);
+
+  }
+
+  70% {
+
+    transform:
+      translateY(-5px)
+      scale(1.02)
+      rotate(-1deg);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(2deg);
+
+  }
+
+}
+
+
+.rose-sticker {
+
+  margin:
+    30px auto 10px;
+
+  width: 90px;
+
+  animation:
+    roseFloat 3s ease-in-out infinite;
+}
+
+
+.rose-sticker img {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 5px 8px
+      rgba(70, 70, 50, 0.15)
+    );
+}
+
+
+.peace-text {
+
+  margin-top: 5px;
+
+  font-size: 18px;
+
+  color: #66725c;
+
+  font-weight: 500;
+}
+
+
+.chhava-section .cute-button {
+
+  background:
+    linear-gradient(
+      100deg,
+      #9a6b2f,
+      #71865a
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(102, 102, 65, 0.25);
+}
+
+
+.chhava-section .cute-button:hover {
+
+  box-shadow:
+    0 15px 30px
+    rgba(102, 102, 65, 0.35);
+}
+
+
+/* =========================================
+   13. CHAFA REVEAL
+========================================= */
+
+.chafa-reveal {
+
+  animation:
+    chafaReveal 1s ease forwards;
+}
+
+
+.chafa-title {
+
+  font-size: 42px;
+
+  color: #9a6525;
+
+  margin: 25px 0;
+
+  opacity: 0;
+
+  animation:
+    chafaTitle
+    0.8s ease
+    0.2s forwards;
+}
+
+
+.chhava-sticker {
+
+  opacity: 0;
+
+  animation:
+    chafaImage
+    1.2s ease
+    0.4s forwards;
+}
+
+
+.rose-sticker {
+
+  opacity: 0;
+
+  animation:
+    roseAppear
+    0.8s ease
+    1s forwards;
+}
+
+
+.peace-text {
+
+  opacity: 0;
+
+  animation:
+    peaceAppear
+    0.8s ease
+    1.3s forwards;
+}
+
+
+@keyframes chafaReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes chafaTitle {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-20px)
+      scale(0.8);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+@keyframes chafaImage {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      scale(0.6)
+      rotate(-6deg);
+
+  }
+
+  70% {
+
+    transform:
+      scale(1.05)
+      rotate(2deg);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0deg);
+
+  }
+
+}
+
+
+@keyframes roseAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(20px)
+      scale(0.5);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+@keyframes peaceAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================
+   14. FINAL SECTION
+========================================= */
+
+.final-section {
+
+  animation:
+    finalReveal 1.2s ease forwards;
+
+  background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(255, 190, 220, 0.3),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(190, 180, 255, 0.3),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fff9fc,
+      #fffdf9,
+      #f9f6ff
+    );
+}
+
+
+@keyframes finalReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(70px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+.final-sparkle {
+
+  font-size: 50px;
+
+  margin-bottom: 20px;
+
+  animation:
+    sparkle 2s ease-in-out infinite;
+}
+
+
+@keyframes sparkle {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+}
+
+
+.final-content {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 55px;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   15. FINAL PHOTO
+========================================= */
+
+.photo-frame {
+
+  width:
+    min(320px, 90%);
+
+  padding: 12px;
+
+  background: white;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 15px 40px
+    rgba(100, 70, 110, 0.2);
+
+  transform: rotate(-4deg);
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.photo-frame:hover {
+
+  transform:
+    rotate(0deg)
+    scale(1.03);
+}
+
+
+.photo-frame img {
+
+  width: 100%;
+
+  display: block;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+
+/* =========================================
+   16. FINAL MESSAGE
+========================================= */
+
+.final-message {
+
+  max-width: 450px;
+
+  text-align: center;
+}
+
+
+.final-message h1 {
+
+  font-size: 36px;
+
+  margin-bottom: 25px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e83f89,
+      #b64bd5
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.final-message p {
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  margin: 20px 0;
+}
+
+
+.rajkumar-line {
+
+  color: #754d76;
+}
+
+
+.rajkumar-line strong {
+
+  color: #b13f9d;
+}
+
+
+.final-wish {
+
+  color: #755f72;
+}
+
+
+.keep-glowing {
+
+  margin-top: 30px;
+
+  font-size: 35px;
+
+  color: #d444a0;
+
+  font-weight: 700;
+}
+
+
+.final-divider {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 25px 0;
+}
+
+
+.final-divider::before,
+.final-divider::after {
+
+  content: "";
+
+  width: 60px;
+
+  height: 1px;
+
+  background: #e783b8;
+}
+
+
+.final-divider span {
+
+  color: #e34e9a;
+
+  font-size: 22px;
+}
+
+
+.chintya-message {
+
+  color: #72586e;
+
+  font-size: 16px !important;
+}
+
+
+.chintya-message strong {
+
+  color: #a8438f;
+}
+
+
+.final-ending {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  color: #b24898;
+}
+
+
+.final-ending p {
+
+  margin: 0;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   17. MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .password-page {
+
+    padding: 20px;
+
+  }
+
+
+  .password-card {
+
+    padding:
+      45px 25px;
+
+    width: 100%;
+
+  }
+
+
+  .password-card h1 {
+
+    font-size: 30px;
+
+  }
+
+
+  .birthday-page {
+
+    padding:
+      30px 12px 70px;
+
+  }
+
+
+  .birthday-card,
+  .reveal-section,
+  .final-section {
+
+    width: 100%;
+
+    padding:
+      45px 22px;
+
+    border-radius: 24px;
+
+    margin-bottom: 45px;
+
+  }
+
+
+  .cake {
+
+    font-size: 70px;
+
+  }
+
+
+  .birthday-card h1 {
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+  }
+
+
+  .birthday-card h2 {
+
+    font-size: 20px;
+
+  }
+
+
+  .birthday-text {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+  }
+
+
+  .main-wish {
+
+    font-size: 20px;
+
+  }
+
+
+  .glowing-line {
+
+    font-size: 18px;
+
+  }
+
+
+  .sunflower-message {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+  }
+
+
+  .little-line {
+
+    font-size: 18px;
+
+  }
+
+
+  .chhava-message {
+
+    font-size: 18px;
+
+  }
+
+
+  .final-content {
+
+    flex-direction: column;
+
+    gap: 40px;
+
+    text-align: center;
+
+  }
+
+
+  .photo-frame {
+
+    width:
+      min(280px, 90%);
+
+  }
+
+
+  .final-message {
+
+    width: 100%;
+
+  }
+
+
+  .final-message h1 {
+
+    font-size: 30px;
+
+  }
+
+
+  .keep-glowing {
+
+    font-size: 30px;
+
+  }
+
+
+  .floating-heart {
+
+    display: none;
+
+  }
+
+}
