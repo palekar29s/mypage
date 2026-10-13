@@ -7,16 +7,12 @@ import { NewwwwComponent } from './newwww/newwww.component';
 export const routes: Routes = [
 
  
- //{
-  //  path: '',
-  //  redirectTo: 'home',
-   // pathMatch: 'full'
- // },
-{
-  path: '',
-  redirectTo: 'neww',
-  pathMatch: 'full'
-},
+ {
+   path: '',
+  redirectTo: 'home',
+   pathMatch: 'full'
+ },
+
   // HOME PAGE
   {
     path: 'home',
